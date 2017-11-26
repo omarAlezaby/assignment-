@@ -1,0 +1,66 @@
+using System;
+
+class file {
+	protected string name ,date ,content ;
+	protected double size  ;
+	public void set_name(string n){
+		name = n;
+	}
+	public void set_content(string n){
+		content = n ;
+	}
+	public string get_name(){
+		return name ;
+	}
+	public double get_size(){
+		return size ;
+	}
+	public string get_date(){
+		return date ;
+	}
+	public string get_content(){
+		return content ;
+	}
+}
+
+class image : file {
+	private string resolution , formula ;
+	public image(string a ,double b,string c,string d,string s,string g){
+		name = a ; 
+		size = b ;
+		date = c ;
+		content = d ; 
+		resolution = s; 
+		formula = g ;
+	}
+	public string get_resolution(){
+		return resolution ;
+	}
+}
+
+class text : file {
+	private int words ;
+	public text(string a ,double b,string c,string d,int s){
+		name = a ; 
+		size = b ;
+		date = c ;
+		content = d ;
+		words = s ;
+	}
+	public int get_words(){
+		return words ;
+	}
+}
+
+
+public class Test
+{
+	public static void Main()
+	{
+		text s = new text("o",10,"1/1","study",20) ;
+		Console.WriteLine(s.get_words()) ;
+		image c = new image("f",20,"1/1","boy","10px","jpg") ;
+		Console.WriteLine(c.get_resolution()) ;	
+		// your code goes here
+	}
+}
